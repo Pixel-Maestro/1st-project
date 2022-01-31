@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>qoute thing</title>
+<style>
+
+#main
+{
+    margin:0px auto;
+    width:500px;
+    position:relative;
+}
+img
+{
+    width:500px;
+    height:300px;
+}
+#quote
+{
+    position:absolute;
+    left: 10px;
+    top: 250px;
+    color: red;
+    font-size: 50px;
+    width: 470px;
+    padding: 10px;
+    text-align: justify;
+}
+</style>
+<script type="text/javascript">
+
+//the script for images and the quotes:
+
+    var imagesArr = ["Image location",
+                    "Image location",
+                    "Image location",
+                    "Image location"];
+                    
+    var quotesArr = [];
+	
+	quotesArr[0] = "The best preparation for tomorrow is doing your best today.";
+	quotesArr[1] = "Every accomplishment starts with the decision to try.";
+	quotesArr[2] = "Try to be a rainbow in someone's cloud.";
+	quotesArr[3] = "Nurture your mind with great thoughts.";
+	quotesArr[4] = "A goal without a plan is just a wish.";
+	quotesArr[5] = "We become what we think about.";
+	quotesArr[6] = "The sure way to miss success is to miss the opportunity.";
+	quotesArr[7] = "The best way to prepare for life is to begin to live.";
+	quotesArr[8] = "What hurts you today makes you stronger tomorrow.";
+	quotesArr[9] = "The best way to make your dreams come true is to wake up.";
+	quotesArr[10] = "A person who never made a mistake never tried anything new.";
+	quotesArr[11] = "Life is about making an impact, not making an income.";
+	quotesArr[12] = "Life isn't about getting and having, it's about giving and being.";
+	
+	//function for randomising the image and quote every time the page is reloaded
+
+	function displayDetails()
+	{
+		var randomImage = Math.floor(Math.random() * (imagesArr.length - 0));
+		var randomQuote = Math.floor(Math.random() * (quotesArr.length - 0));
+		
+		document.getElementById("background").src = imagesArr[randomImage];
+		document.getElementById("quote").innerHTML = quotesArr[randomQuote];
+	}
+	
+</script>
+<body onload="displayDetails();">
+	<div id="main">
+		<h2 align="center">Quote of the Day</h2>
+		<img id="background" />
+		<div id="quote"></div>
+	</div>
+</body>
+</html>
